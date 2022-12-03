@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="NhomTTPTT.example.BaiTapCuoiKi.ActivitycategoryDetail">
+    <ImageView
+        android:id="@+id/imgcategory_detail"
+        android:layout_width="match_parent"
+        android:src="@drawable/cherup"
+        android:scaleType="centerCrop"
+        android:alpha="0.5"
+        android:layout_height="250dp"/>
+
+    <TextView
+        android:id="@+id/txtcategory_detail"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="180dp"
+        android:background="#6F000000"
+        android:padding="10dp"
+        android:textColor="#FFFFFF"
+        android:textSize="35sp"
+        android:textStyle="bold" />
+    <ListView
+        android:id="@+id/lvcategory_detail"
+        android:background="#E1000000"
+        android:listSelector="#3CFFFFFF"
+        android:layout_below="@+id/imgcategory_detail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</RelativeLayout>

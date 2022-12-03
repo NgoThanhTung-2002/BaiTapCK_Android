@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/black"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context="NhomTTPTT.example.BaiTapCuoiKi.ActivitySignUp">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/kttv"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/inPutMobile"
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_height="57dp"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:background="@drawable/round_bg"
+            android:drawablePadding="16dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:ems="10"
+            android:hint="Nhập số điện thoại"
+            android:inputType="number"
+            android:paddingLeft="58dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="+84-"
+            android:layout_marginTop="38dp"
+            android:layout_marginLeft="45dp"
+            android:textColor="@color/white"/>
+    </RelativeLayout>
+
+
+    <EditText
+        android:id="@+id/edtEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="12dp"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/round_bg"
+        android:drawableStart="@drawable/ic_email_down"
+        android:drawablePadding="16dp"
+        android:ems="10"
+        android:hint="Nhập email"
+        android:inputType="textPersonName"
+        android:padding="16dp"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/edtPasswordSignUP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/round_bg"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:drawableStart="@drawable/ic_baseline_lock_24"
+            android:drawablePadding="16dp"
+            android:ems="10"
+            android:hint="Mật khẩu"
+            android:inputType="textPassword"
+            android:padding="16dp" />
+        <ImageButton
+            android:id="@+id/imgMatPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="325dp"
+            android:background="@null"
+            android:src="@drawable/ic_baseline_remove_red_eye_24" />
+        <ImageButton
+            android:id="@+id/imgNhamMatPassword"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="325dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:src="@drawable/nhammat" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/edtConfirmPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/round_bg"
+            android:drawableStart="@drawable/ic_baseline_lock_open_24"
+            android:drawablePadding="16dp"
+            android:ems="10"
+            android:hint="Xác nhận mật khẩu"
+            android:inputType="textPassword"
+            android:padding="16dp" />
+        <ImageButton
+            android:id="@+id/imgMatConfirmPassword"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="325dp"
+            android:layout_marginTop="30dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:src="@drawable/ic_baseline_remove_red_eye_24" />
+        <ImageButton
+            android:id="@+id/imgNhamMatConfirmPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="325dp"
+            android:layout_marginTop="30dp"
+            android:background="@null"
+            android:src="@drawable/nhammat" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="36dp"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSignUp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/round_border"
+            android:text="Đăng kí"
+            android:textColor="@color/white"
+            android:textSize="27sp"
+            android:textStyle="bold" />
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            />
+    </FrameLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/gotoSignIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginLeft="40dp"
+            android:text="Bạn đã có tài khoản? "
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnSignIn"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="20dp"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:text="Đăng nhập"
+            android:textAllCaps="false"
+            android:layout_toRightOf="@+id/gotoSignIn"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+</LinearLayout>

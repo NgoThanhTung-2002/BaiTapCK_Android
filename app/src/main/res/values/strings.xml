@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TTPTT</string>
+
+    <string name="nav_drawer_oppen">Oppen Navigation Drawer</string>
+    <string name="nav_drawer_close">Close Navigation Drawer</string>
+    <string name="_84">+84-</string>
+</resources>
