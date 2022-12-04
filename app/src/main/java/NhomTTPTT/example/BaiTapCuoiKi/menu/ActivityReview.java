@@ -17,11 +17,6 @@ public class ActivityReview extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_review);
 
-        ImageView starof1 = findViewById(R.id.starof1);
-        ImageView starof2 = findViewById(R.id.starof2);
-        ImageView starof3 = findViewById(R.id.starof3);
-        ImageView starof4 = findViewById(R.id.starof4);
-        ImageView starof5 = findViewById(R.id.starof5);
 
         ImageView star1 =findViewById(R.id.star1);
         ImageView star2 =findViewById(R.id.star2);
@@ -29,7 +24,11 @@ public class ActivityReview extends AppCompatActivity {
         ImageView star4 =findViewById(R.id.star4);
         ImageView star5 =findViewById(R.id.star5);
 
-
+        ImageView starof1 = findViewById(R.id.starof1);
+        ImageView starof2 = findViewById(R.id.starof2);
+        ImageView starof3 = findViewById(R.id.starof3);
+        ImageView starof4 = findViewById(R.id.starof4);
+        ImageView starof5 = findViewById(R.id.starof5);
 
         Button btn = findViewById(R.id.btn_danhGia);
         btn.setOnClickListener(new View.OnClickListener() {
@@ -38,7 +37,6 @@ public class ActivityReview extends AppCompatActivity {
                 Toast.makeText(ActivityReview.this, "Danh gia cua ban da duoc gui di", Toast.LENGTH_SHORT).show();
             }
         });
-
         star1.setVisibility(View.INVISIBLE);
         star2.setVisibility(View.INVISIBLE);
         star3.setVisibility(View.INVISIBLE);

@@ -7,11 +7,17 @@
     android:layout_height="match_parent"
     tools:context="NhomTTPTT.example.BaiTapCuoiKi.menu.ActivityFavorite">
     <TextView
+        android:id="@+id/txtViewFavorite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Favorite"
+        android:gravity="center"
+        android:text="Danh sách yêu thích rỗng"
         android:textSize="40sp"
         android:textStyle="bold"/>
+    <ListView
+        android:id="@+id/lv_favorite"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 
 </RelativeLayout>

@@ -1,9 +1,11 @@
 package NhomTTPTT.example.BaiTapCuoiKi;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.SearchView;
 
@@ -45,7 +47,7 @@ public class ActivitySeach extends AppCompatActivity {
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("movies"), MovieModel.class)
                         .build();
 
-        mainAdapter = new MainAdapter(options);
+        mainAdapter = new MainAdapter(options,this);
         rc.setAdapter(mainAdapter);
     }
     private void txtSeach(String str){
@@ -54,7 +56,7 @@ public class ActivitySeach extends AppCompatActivity {
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("movies").orderByChild("namemovie").startAt(str).endAt(str+"~"), MovieModel.class)
                         .build();
 
-        mainAdapter= new MainAdapter(options);
+        mainAdapter= new MainAdapter(options,this);
         mainAdapter.startListening();
         rc.setAdapter(mainAdapter);
     }
@@ -70,4 +72,7 @@ public class ActivitySeach extends AppCompatActivity {
         super.onStop();
         mainAdapter.stopListening();
     }
+
+
+
 }

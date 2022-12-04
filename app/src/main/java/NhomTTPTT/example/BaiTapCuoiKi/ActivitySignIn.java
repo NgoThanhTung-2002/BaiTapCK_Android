@@ -64,8 +64,7 @@ public class ActivitySignIn extends AppCompatActivity {
 
         database= new DatabaseHelper(ActivitySignIn.this);
 //        database.deleteAll();
-
-
+        database.insertTaiKhoan(new Account("quangtrong","123","Thanhno1","vothanh6081@gmail.com","852146552"));
         edtUseName= (EditText) findViewById(R.id.edtUserName);
         edtPassWord= (EditText) findViewById(R.id.edtPassword);
         btnSignIn= (Button) findViewById(R.id.btnSignIn);
@@ -89,7 +88,6 @@ public class ActivitySignIn extends AppCompatActivity {
                     while (dataAccount.moveToNext()){
                         String phone =dataAccount.getString(4);
                         String password =dataAccount.getString(1);
-                        Toast.makeText(ActivitySignIn.this, phone+""+password, Toast.LENGTH_SHORT).show();
                         if (edtUseName.getText().toString().equals(phone) && edtPassWord.getText().toString().equals(password) ) {
                             Toast.makeText(ActivitySignIn.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(ActivitySignIn.this, ActivityContaint.class);
@@ -120,7 +118,6 @@ public class ActivitySignIn extends AppCompatActivity {
                 }
             }
         });
-		
         btnSignIn_SignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

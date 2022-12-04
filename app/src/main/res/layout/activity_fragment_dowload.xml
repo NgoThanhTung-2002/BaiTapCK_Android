@@ -8,19 +8,24 @@
     android:background="#36685F5F"
     android:layout_height="match_parent">
     <ImageView
-        android:id="@+id/imgIsempty"
+        android:id="@+id/imgEmpty"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_centerInParent="true"
         android:src="@drawable/isrmpty"
         android:scaleType="centerCrop"/>
     <TextView
+        android:id="@+id/txt_empty"
         android:textColor="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Tải phim về để xem bất kì đâu!"
-        android:layout_below="@+id/imgIsempty"
+        android:layout_below="@+id/imgEmpty"
         android:textSize="20sp"
         android:layout_centerInParent="true"/>
+    <ListView
+        android:id="@+id/listviewDowLoad"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </RelativeLayout>

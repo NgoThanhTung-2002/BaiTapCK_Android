@@ -35,7 +35,7 @@ public class ActivityProfile extends AppCompatActivity {
         edtphone.setEnabled(false);
         Intent intent = getIntent();
         String phoneAX = intent.getStringExtra("phone");
-        Toast.makeText(this, phoneAX, Toast.LENGTH_SHORT).show();
+
 
         Cursor dataAccount = ActivitySignIn.database.GetData("SELECT * FROM TaiKhoan");
         while (dataAccount.moveToNext()) {

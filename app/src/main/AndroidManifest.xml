@@ -16,6 +16,9 @@
         android:theme="@style/Theme.OTPVerification"
         tools:targetApi="31">
         <activity
+            android:name="NhomTTPTT.example.BaiTapCuoiKi.LogOutLoading"
+            android:exported="false" />
+        <activity
             android:name="NhomTTPTT.example.BaiTapCuoiKi.ActivitySignIn"
             android:exported="false" />
         <activity

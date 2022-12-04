@@ -14,16 +14,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.otpverification.R;
 
-//import android.dataAccount;
-
 public class ActivityForgotPassword extends AppCompatActivity {
-	
     EditText edtForgotUserName,edtNhapMa;
     Button btnForgotXacNhan,btnBack;
     TextView txtPassword,txtRanDomMa;
     ImageView imgRefresh;
     RandomStringExmple rd = new RandomStringExmple();
     boolean status=false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,14 +42,12 @@ public class ActivityForgotPassword extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-		
         imgRefresh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 txtRanDomMa.setText(rd.RanDomString());
             }
         });
-		
         btnForgotXacNhan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

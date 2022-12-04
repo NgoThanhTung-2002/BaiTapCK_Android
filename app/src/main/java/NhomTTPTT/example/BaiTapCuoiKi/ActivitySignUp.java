@@ -66,11 +66,11 @@ public class ActivitySignUp extends AppCompatActivity {
                     Matcher matcherPhoneNumber = patternPhoneNumber.matcher(edtUserName.getText().toString());
 
                     if(!matcher.find()){
-                        Toast.makeText(ActivitySignUp.this, "Sai định dạng Email", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ActivitySignUp.this, "Sai định dạng Mail", Toast.LENGTH_SHORT).show();
 
                     }
                     else if(!matcherPhoneNumber.find()){
-                        Toast.makeText(ActivitySignUp.this, "Số điện thoại không hợp lệ!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ActivitySignUp.this, "Số điện thoại không hợp lệ !!", Toast.LENGTH_SHORT).show();
                     } else{
                         if(edtPassWord.getText().toString().equals(edtConfirmPassword.getText().toString())){
                             Cursor dataAccount = ActivitySignIn.database.GetData("SELECT * FROM TaiKhoan");
@@ -119,6 +119,7 @@ public class ActivitySignUp extends AppCompatActivity {
                                         }
                                 );
                             }
+
                         }
                         else{
                             Toast.makeText(ActivitySignUp.this, "Mật khẩu không khớp", Toast.LENGTH_SHORT).show();
@@ -127,7 +128,7 @@ public class ActivitySignUp extends AppCompatActivity {
 
                 }else
                 {
-                    Toast.makeText(ActivitySignUp.this, "Bạn cần nhập đầy đủ thông tin!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ActivitySignUp.this, "Bạn cần nhập đầy đủ thông tin!!", Toast.LENGTH_SHORT).show();
                 }
             }
         });

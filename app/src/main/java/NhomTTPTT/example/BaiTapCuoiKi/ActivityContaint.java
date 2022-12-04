@@ -24,7 +24,7 @@ import NhomTTPTT.example.BaiTapCuoiKi.menu.ActivityReview;
 import NhomTTPTT.example.BaiTapCuoiKi.menu.ActivityShare;
 import NhomTTPTT.example.BaiTapCuoiKi.navigation_bottom.FragmentCategory;
 import NhomTTPTT.example.BaiTapCuoiKi.navigation_bottom.FragmentHome;
-import NhomTTPTT.example.BaiTapCuoiKi.navigation_bottom.FragmentMusicRemix;
+import NhomTTPTT.example.BaiTapCuoiKi.navigation_bottom.FragmentDowLoad;
 import NhomTTPTT.example.BaiTapCuoiKi.navigation_bottom.FragmentTrend;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -40,7 +40,6 @@ public class ActivityContaint extends AppCompatActivity implements NavigationVie
         setContentView(R.layout.activity_containt);
             Intent intent =getIntent();
         phone  = intent.getStringExtra("phone");
-        Toast.makeText(this, phone, Toast.LENGTH_SHORT).show();
         txt_Seach =(TextView) findViewById(R.id.edtSeach);
         txt_Seach.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,7 +66,7 @@ public class ActivityContaint extends AppCompatActivity implements NavigationVie
                         linearLayout.setVisibility(View.VISIBLE);
                         break;
                     case R.id.nav_dowload:
-                        selectedFragment= new FragmentMusicRemix();
+                        selectedFragment= new FragmentDowLoad();
                         linearLayout.setVisibility(View.VISIBLE);
                         break;
                     case R.id.nav_category:
@@ -113,7 +112,7 @@ public class ActivityContaint extends AppCompatActivity implements NavigationVie
             startActivity(new Intent(ActivityContaint.this, ActivityShare.class));
         }
         else if(id==R.id.nav_out){
-            startActivity(new Intent(ActivityContaint.this,ActivitySignIn.class));
+            startActivity(new Intent(ActivityContaint.this,LogOutLoading.class));
         }
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;

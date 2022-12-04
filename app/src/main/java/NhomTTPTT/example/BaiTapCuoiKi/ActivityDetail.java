@@ -7,20 +7,27 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.MediaController;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.VideoView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
 
 import com.example.otpverification.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import NhomTTPTT.example.BaiTapCuoiKi.repository.ListDowLoad;
+import NhomTTPTT.example.BaiTapCuoiKi.repository.Listfavorite;
+
 public class ActivityDetail extends AppCompatActivity {
     TextView txtNameMovie,txtSumary;
     ImageButton imgmp4;
+    ImageView imgDowLoad,imgFavorite;
     VideoView vdView;
 
     private GridView gridView;
@@ -34,6 +41,8 @@ public class ActivityDetail extends AppCompatActivity {
         txtNameMovie =(TextView) findViewById(R.id.txt_detailNameMovie);
         txtSumary =(TextView) findViewById(R.id.txt_Summary);
         imgmp4 =(ImageButton) findViewById(R.id.imgmp4);
+        imgDowLoad =(ImageView) findViewById(R.id.imgDowLoad);
+        imgFavorite =(ImageView) findViewById(R.id.imgYeuThich);
         vdView = (VideoView) findViewById(R.id.vd_ViDeoMP4);
 
         Intent intent =getIntent();
@@ -53,6 +62,7 @@ public class ActivityDetail extends AppCompatActivity {
                     case "Cheer Up":
                     case "Tình Cảm":
                     case "Viễn Tưởng":
+                    case "CHERUP":
                     case "Khoa Học":
                     case "Hoạt Hình" :{
                         vdView.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/"+R.raw.chientranh));
@@ -65,6 +75,21 @@ public class ActivityDetail extends AppCompatActivity {
                 vdView.setMediaController(mediaController);
             }
         });
+        imgDowLoad.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(ActivityDetail.this, "Tải xuống thành công", Toast.LENGTH_SHORT).show();
+                    ListDowLoad.movieArrayList.add(new Movie("Chiến Tranh", R.drawable.ct_chientranh, MovieSummary.CHIENTRANH,"123,4K","00:04:29","","KT- VO KIM THANH"));
+            }
+        });
+        imgFavorite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(ActivityDetail.this, "Đã thêm vào danh sách yêu thích", Toast.LENGTH_SHORT).show();
+                Listfavorite.movieArrayList.add(new Movie("Chiến Tranh", R.drawable.ct_chientranh, MovieSummary.CHIENTRANH,"123,4K","00:04:29","","KT- VO KIM THANH"));
+            }
+        });
+
         gridView = (GridView) findViewById(R.id.grViewDetail);
         movieList = new ArrayList<>();
         movieList.add(new Movie("",R.drawable.ct_kinhdi, MovieSummary.CHIENTRANH,"123,4K","00:04:29","PHIM KINH DỊ"));
@@ -91,5 +116,7 @@ public class ActivityDetail extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
+
 }

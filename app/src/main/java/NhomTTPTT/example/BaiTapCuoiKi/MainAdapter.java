@@ -1,5 +1,7 @@
 package NhomTTPTT.example.BaiTapCuoiKi;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,16 +20,16 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 
 public class MainAdapter extends FirebaseRecyclerAdapter<MovieModel,MainAdapter.myViewHolder> {
-
-
+    private Context context;
     /**
      * Initialize a {@link RecyclerView.Adapter} that listens to a Firebase query. See
      * {@link FirebaseRecyclerOptions} for configuration options.
      *
      * @param options
      */
-    public MainAdapter(@NonNull FirebaseRecyclerOptions<MovieModel> options) {
+    public MainAdapter(@NonNull FirebaseRecyclerOptions<MovieModel> options,Context context) {
         super(options);
+        this.context=context;
     }
 
     @Override
@@ -46,8 +48,16 @@ public class MainAdapter extends FirebaseRecyclerAdapter<MovieModel,MainAdapter.
                 .error(com.firebase.ui.database.R.drawable.common_google_signin_btn_icon_dark_normal)
                 .into(holder.img);
 
-    }
+        holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, ActivityDetail.class);
+                intent.putExtra("key1", model.getNamemovie());
+                context.startActivity(intent);
+            }
+        });
 
+    }
     @NonNull
     @Override
     public myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -67,6 +77,7 @@ public class MainAdapter extends FirebaseRecyclerAdapter<MovieModel,MainAdapter.
             dienvien=(TextView) itemView.findViewById(R.id.txt_name_cast);
             namemovie=(TextView) itemView.findViewById(R.id.txt_nameMovie);
             time=(TextView) itemView.findViewById(R.id.txt_time);
+            relativeLayout =(RelativeLayout) itemView.findViewById(R.id.rl_item);
         }
     }
 }
